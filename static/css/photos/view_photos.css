@@ -1,0 +1,166 @@
+.viewPhoto {
+	background: #fbfbfb;
+}
+
+.viewPhoto .left {
+	width: 800px;
+	vertical-align: top;
+	position: relative;
+}
+
+.viewPhoto .left .corner {
+	position: absolute;
+	top: 15px;
+	right: -1px;
+}
+
+.viewPhoto .left .container {
+	padding: 10px 15px 15px 15px;
+}
+.viewPhoto .left .container .title {
+	margin-bottom:10px;
+}
+.viewPhoto .left .video {
+	margin-top: 10px;
+}
+
+.viewPhoto .left .description {
+	margin-top: 10px;
+}
+
+.viewPhoto .right {
+	vertical-align: top;
+	border-left: solid 1px #e1e1e1;
+}
+
+.viewPhoto .right .container {
+	position: relative;
+	padding: 15px 20px;
+}
+
+.viewPhoto .right .title {
+	font-weight: bold;
+	color: #0093BD;
+}
+
+.viewPhoto .right .addTime {
+	color: #b7b7b7;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+
+.viewPhoto .right .commentForm {
+	border: solid 1px #e1e1e1;
+}
+
+.viewPhoto .right .commentForm img {
+	border-right: solid 1px #e1e1e1;
+}
+
+.viewPhoto 	.commentForm textarea {
+	border: 0px;
+	margin: 0px;
+	width: 250px;
+	height: 40px;
+}
+
+.viewPhoto .right .hint {
+	font-size: 12px;
+	color: #b7b7b7;
+	margin-top: 10px;
+	line-height: 12px;
+	padding-top: 3px;
+}
+
+.viewPhoto .right .commentsCount {
+	margin-top: 10px;
+	color: #0093bd;
+	text-decoration: underline;
+}
+
+.viewPhoto .right .comments {
+	padding: 10px 0;
+}
+
+.viewPhoto .right .commentsItem {
+	width: 100%;
+}
+
+.viewPhoto .right .commentsItem .avatar {
+	border: solid 1px #e1e1e1;
+}
+
+.viewPhoto .right .commentsItem .userName {
+	color: #0093bd;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+.viewPhoto .right .commentsItem .addTime {
+	margin: 5px 10px;
+}
+
+.viewPhoto .right .commentsItem .text {
+	margin: 5px 0 0 10px;
+}
+
+.viewPhoto .right .commentsItem .information {
+	color: #7d7d7d;
+	line-height: 10px;
+	float: right;
+	margin-top: 5px;
+}
+
+#commentsScroll {
+	overflow: auto;
+	width: 310px;
+	height: 430px;
+}
+
+.viewPhoto .right .close {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	cursor: pointer;
+	z-index: 10;
+}
+
+.viewPhoto .left .photo {
+	position: relative;
+}
+.viewPhoto .prev,.viewPhoto .next {
+	display:block;
+	width: 34px;
+	height: 40px;
+	position: absolute;
+	top: 220px;
+	cursor: pointer;
+}
+.viewPhoto .prev {
+	left: -7px;
+	background: url(../photoViewArrows.png) top left no-repeat;
+}
+
+.viewPhoto .next {
+	right: -7px;
+	background: url(../photoViewArrows.png) top right no-repeat;
+}
+.photo_controll, .video_controll {
+	position:absolute;
+	background:url(../opacity.png);
+	padding:7px 10px;
+	left:0px;
+	bottom:0px;
+	right:0px;
+	color:#fff;
+	font-size:12px;
+}
+.photo_controll a, .video_controll a {
+	color:#fff;
+	font-size:12px;
+}
+.video_controll {
+	position: static;
+	margin:auto;
+	width:680px;
+}

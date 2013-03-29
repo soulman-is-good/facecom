@@ -1,0 +1,273 @@
+/* 
+    Document   : discount
+    Created on : 04.03.2013, 10:10:41
+    Author     : maxim
+    Description:
+        Discount index page stylesheet
+*/
+.main .head {
+    background: #FFF;
+    padding: 15px 25px;
+}
+.main.fix .head {
+    position:fixed;
+    top:0;
+    left:50%;
+    margin-left:-481px;
+    clip:rect(0px,962px,130px,0px);
+    width:912px;
+    box-shadow:0 0px 14px #AAA;
+    -moz-box-shadow:0 0px 14px #AAA;
+    -webkit-box-shadow:0 0px 14px #AAA;
+    -o-box-shadow:0 0px 14px #AAA;
+    -khtml-box-shadow:0 0px 14px #AAA;
+    z-index:5;
+}
+.main .content {
+    padding: 0 23px;
+}
+.main.fix .content {
+    padding:117px 23px 0;
+}
+
+.main .blocks td {
+    vertical-align: top;
+}
+
+.main .blocks .right {
+    width:212px;
+}
+.main .blocks .text {
+    padding:0 0 0 18px;
+}
+
+#sales.loading {
+    background:url(../loader02.gif) no-repeat 50% 50% rgba(0,0,0,0.4);
+}
+#sales {
+    min-height:1100px;
+    background:none;
+}
+
+
+.text .discount.hidden {
+    opacity:0;
+    left:5px;
+    top:0;
+}
+
+.text .discount {
+    transition: opacity 0.5s, left 0.5s;
+    -webkit-transition: opacity 0.5s, left 0.5s;
+    -moz-transition: opacity 0.5s, left 0.5s;
+    -o-transition: opacity 0.5s, left 0.5s;
+    -ms-transition: opacity 0.5s, left 0.5s;
+    display:inline-block;
+    position:relative;
+    opacity:1;
+    left:0;
+    top:0;
+    width:208px;
+    height:358px;
+    padding:5px;
+    margin:3px 3px;
+    border:1px solid #e1e1e1;
+    background: #f0f0f0;
+    box-shadow:0 0 3px #e1e1e1;
+    -moz-box-shadow:0 0 3px #e1e1e1;
+    -webkit-box-shadow:0 0 3px #e1e1e1;
+    -o-box-shadow:0 0 3px #e1e1e1;
+    -ms-box-shadow:0 0 3px #e1e1e1;
+    -khtml-box-shadow:0 0 3px #e1e1e1;
+}
+
+.text .discount:nth-child(3n+1) {
+    margin-left:0;
+}
+
+.text .discount:nth-child(3n+3) {
+    margin-right:0;
+}
+
+.discount .sale {
+    display:block;
+    text-decoration: none;
+    border:none;
+    height:183px;
+    background-repeat:no-repeat;
+    background-position: 50% 0;
+    position:relative;
+}
+.discount .sale .per {
+    position:absolute;
+    display:block;
+    left:0px;
+    top:20px;
+    height:36px;
+    color:#00c4ef;
+    text-shadow: 0 -1px #e1e1e1;
+    font: bold 24px Impact, serif;
+    background:url(../sale.png) repeat-x 0 -36px;
+}
+.discount .sale .per b {
+    display:block;
+    position:absolute;
+    width:3px;
+    height:40px;
+    top:0px;
+    left:-3px;
+    background:url(../sale.png) no-repeat 0 -72px;
+}
+.discount .sale .per i {
+    display:block;
+    position:absolute;
+    width:18px;
+    height:36px;
+    top:0px;
+    right:-18px;
+    background:url(../sale.png) no-repeat 0 0;
+}
+.discount .sale .info {
+    position:absolute;
+    width:100%;
+    left:0px;
+    bottom:0px;
+    color:#e0e0e0;
+    background:rgba(0,0,0,0.6);
+    font: 14px "Trebuchet MS", sans-serif;
+}
+.discount .sale .info.secret {
+    height:0px;
+    overflow:hidden;
+}
+.discount:hover .sale .info.secret {
+    height:24px;
+    transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    -webkit-transition: height 0.3s;
+}
+.discount .sale .info .in-info{
+    padding:4px;
+}
+.discount .sale .info .in-info .fleft{
+    float:left;
+}
+.discount .sale .info .in-info .fright{
+    text-align:right;
+    float:right;
+}
+.discount .sale .info .in-info .fright span{
+    padding: 0 0 0 15px;
+    background:url(icon_man.png) no-repeat 0 50%;
+}
+.discount .title {
+    padding:14px 0;
+}
+.discount .desc {
+    color:#7d7d7d;
+    height:140px;
+    overflow:hidden;
+}
+.discount .more {
+    text-align: center;
+    position:absolute;
+    width:100%;
+    height:30px;
+    left:0px;
+    bottom:5px;
+}
+.discount .more a {
+    display:inline-block;
+    background: #06bde4;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzA2YmRlNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzI5YzllYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iIzA0YmRlNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwNGFiZDEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, #06bde4 0%, #29c9eb 50%, #04bde4 51%, #04abd1 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#06bde4), color-stop(50%,#29c9eb), color-stop(51%,#04bde4), color-stop(100%,#04abd1));
+    background: -webkit-linear-gradient(top, #06bde4 0%,#29c9eb 50%,#04bde4 51%,#04abd1 100%);
+    background: -o-linear-gradient(top, #06bde4 0%,#29c9eb 50%,#04bde4 51%,#04abd1 100%);
+    background: -ms-linear-gradient(top, #06bde4 0%,#29c9eb 50%,#04bde4 51%,#04abd1 100%);
+    background: linear-gradient(to bottom, #06bde4 0%,#29c9eb 50%,#04bde4 51%,#04abd1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#06bde4', endColorstr='#04abd1',GradientType=0 );
+    color:#FFF;
+    text-decoration: none;
+    padding:5px 15px;
+    font:14px "Trebuchet MS", sans-serif;
+    border:1px solid #FFF;
+}
+
+
+.show_more {
+    padding:20px 0;
+    height:30px;
+    text-align:center;
+}
+
+
+.flag {
+    display:block;
+    position: absolute;
+    height: 46px;
+    padding:15px 60px 15px 15px;
+    border: solid 1px #ccc;
+    border-right: none;
+    background: #00cffb;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwY2ZmYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMGFiZDIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, #00cffb 0%, #00abd2 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00cffb), color-stop(100%,#00abd2));
+    background: -webkit-linear-gradient(top, #00cffb 0%,#00abd2 100%);
+    background: -o-linear-gradient(top, #00cffb 0%,#00abd2 100%);
+    background: -ms-linear-gradient(top, #00cffb 0%,#00abd2 100%);
+    background: linear-gradient(to bottom, #00cffb 0%,#00abd2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00cffb', endColorstr='#00abd2',GradientType=0 );
+    cursor: pointer;
+}
+.flag:after {
+    position: absolute;
+    top: 15px; 
+    right: -23px;
+    width: 44px;
+    height: 44px;
+    border-left: solid 1px #ccc;
+    border-top: solid 1px #ccc;
+    transform: rotate(134deg) skewX(-10deg) skewY(-10deg);
+    -moz-transform: rotate(134deg) skewX(-10deg) skewY(-10deg);
+    -webkit-transform: rotate(134deg) skewX(-10deg) skewY(-10deg);
+    background: #00cffb;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMDBjZmZiIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwYWJkMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(45deg, #00cffb 0%, #00abd2 100%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#00cffb), color-stop(100%,#00abd2));
+    background: -webkit-linear-gradient(45deg, #00cffb 0%,#00abd2 100%);
+    background: -o-linear-gradient(45deg, #00cffb 0%,#00abd2 100%);
+    background: -ms-linear-gradient(45deg, #00cffb 0%,#00abd2 100%);
+    background: linear-gradient(45deg, #00cffb 0%,#00abd2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00cffb', endColorstr='#00abd2',GradientType=1 );
+    content: '';
+}
+.flag .info {
+    font:18px "Trebuchet MS";
+    position:absolute;
+    left:15px;
+    top:15px;
+    z-index:1;
+}
+.discount-show .flag .info {
+    position: relative;
+    left:0;
+    top:0;
+    margin-right:75px;
+}
+.flag .info .buy {
+    color: #FFF;
+}
+.flag .percent {
+    font:55px Impact, sans-serif;
+    color:#FFF;
+    line-height:0.9;
+    margin-left:130px
+}
+.discount-show .flag .percent {
+    position:absolute;
+    margin:0;
+    top:15px;
+    right:30px;
+}
+

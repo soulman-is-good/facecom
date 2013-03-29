@@ -1,0 +1,102 @@
+/* 
+    Document   : leftblock
+    Created on : 04.03.2013, 10:17:39
+    Author     : maxim
+    Description:
+        stylesheet for search and filter head block
+*/
+
+.officeContent {
+    margin: 25px 0 0 0;
+    width: 100%;
+}
+
+.leftblock {
+    color:#7d7d7d;
+    width:210px;
+    vertical-align:top;
+}
+
+.qsearch {
+    font-size:14px;
+    padding:10px;
+    width:190px;
+    color:#c2c2c2;
+    border:none;
+    background-color:#e5e5e5;
+    box-shadow: inset 0px 0px 17px 0px rgba(0,0,0,0.1);
+}
+
+a.qsearchIcon:link, a.qsearchIcon:active, a.qsearchIcon:visited, a.qsearchIcon:hover {
+    display:block;
+    float:right;
+    position:relative;
+    margin-left:-200px;
+    margin-right:10px;
+    width:14px;
+    height:38px;
+    background:url(../s_icon.png);
+    background-position:center right;
+    background-repeat:no-repeat;
+    text-decoration:none;
+}
+
+.leftblock a.qsearchIcon:hover {
+    background:url(../s_icon_active.png);
+    background-position:center right;
+    background-repeat:no-repeat;
+    text-decoration:none;
+}
+
+.leftblock a:hover {
+    text-decoration:underline;
+}
+
+.leftblock .count {
+    color: #c2c2c2;
+}
+
+.leftblock h5 {
+    font-weight:normal;
+    font-size:16px;
+    margin:0px;
+    margin-top: 10px;
+    color:#000;
+}
+
+.mainblock {
+    padding-left:18px;
+    vertical-align:top;
+}
+
+.orderby_l, .orderby_f, .orderby_b {
+    display:inline-block;
+    padding:10px;
+}
+
+.orderby_l {
+    border-left:1px solid #e1e1e1;
+    border-top:1px solid #e1e1e1;
+    border-bottom:1px solid #e1e1e1;
+    background:url(../border-arrow.png);
+    background-position:center right;
+    background-repeat:repeat-y;
+    color:#c2c2c2;
+}
+
+.orderby_f {
+    border-top:1px solid #e1e1e1;
+    border-bottom:1px solid #e1e1e1;
+    padding-left:25px;
+    padding-right:25px;
+}
+.orderby_b {
+    border-right:1px solid #e1e1e1;
+    border-top:1px solid #e1e1e1;
+    border-bottom:1px solid #e1e1e1;
+    background:url(../updown.png);
+    background-position:center right;
+    background-repeat:no-repeat;
+    background-origin:content-box;
+    color:#c2c2c2;
+}
