@@ -1,0 +1,24 @@
+
+h1{
+	font-weight:normal;
+	margin-bottom:14px;
+}
+
+a.indexMenu:link,
+a.indexMenu:active,
+a.indexMenu:visited,
+a.indexMenu:hover{
+	display:inline-block;
+	text-align:center;
+	color:#000;
+	vertical-align:top;
+ 	text-decoration:none;
+}
+
+a.indexMenu:hover{
+	text-decoration:underline;
+}
+
+a.indexMenu:hover img{
+	opacity:0.45;
+}

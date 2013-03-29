@@ -1,0 +1,36 @@
+/* 
+    Document   : phonizer
+    Created on : 11.10.2010, 10:09:57
+    Author     : maxim
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+SPAN.aphone {
+    display:block;
+}
+
+SPAN.aphone INPUT {
+    padding-right:4px;
+    margin:0 15px 10px;
+    text-align:right;
+    display:inline;
+}
+
+.c_code {
+    width:32px;
+}
+
+.t_code {
+    width:64px;
+}
+
+.tel {
+    width:128px;
+}
+

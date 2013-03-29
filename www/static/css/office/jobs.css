@@ -1,0 +1,56 @@
+.job .jobName a {
+	text-decoration: none;
+}
+.job .jobName a:hover {
+	text-decoration: underline;
+}
+.create_jobs_frm {
+	margin:20px 20px 0px 0px;
+	overflow: hidden;
+}
+.create_jobs_frm .field {
+	margin-bottom:5px;
+	padding-bottom:5px;
+}
+.create_jobs_frm .select {
+	padding:4px;
+	top:1px;
+}
+.create_jobs_frm .label {
+	font: 14px Tahoma, sans-serif;
+	color: #d1d1d1;
+	float:left;
+	width:150px;
+	margin-top:5px;
+}
+.create_jobs_frm input[type="text"] {
+	padding-left:10px;
+	background: none;
+}
+.create_jobs_frm .employment {
+	float:left;
+	margin-top:10px;
+}
+.create_jobs_frm textarea {
+	width: 358px;
+	resize: vertical;
+	min-height: 105px;
+}
+.create_jobs_frm input[type="checkbox"] {
+	display:inline;
+}
+.create_jobs_frm input[type="submit"].blue, input[type="button"].blue {
+	margin-left: 0px;
+}
+.job_view {
+	width:600px;
+	padding:10px 20px 0 0;
+}
+.job_view .field {
+	margin-bottom:15px;
+}
+.job_view p {
+	line-height:22px;
+	margin:2px;
+	padding:0px;	
+}
