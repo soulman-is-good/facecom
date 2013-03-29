@@ -1,0 +1,245 @@
+/* 
+    Document   : office-edit
+    Created on : 08.11.2012, 16:23:03
+    Author     : maxim
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.main .content.office-edit {
+    background: #f7f7f7;
+}
+
+.clear {
+    font-size:0px;
+    line-height: 0;
+    height:0px;
+    clear:both;
+}
+
+.office-edit .hr {
+    border-left:none;
+    border-right:none;
+    border-top:1px solid #e1e1e1;
+    border-bottom:1px solid #ffffff;
+    font-size:0pt;
+    height:0px;
+    line-height:0;
+}
+.office-edit .form {
+    padding:10px;
+}
+
+.office-edit .form .field {
+    padding:4px 0px;
+    clear:left;
+}
+
+.office-edit .form .field label {
+    display:block;
+    float:left;
+    width:180px;
+    padding:5px 14px 5px 0;
+    text-align: right;
+    font:14px Tahoma, sans-serif;
+    color:#d1d1d1;
+}
+.office-edit .form .field label span{
+    display:inline;
+    margin:0;
+}
+.office-edit .form .field input, .office-edit .form .field textarea {
+    width:209px;
+    border: 1px solid #E1E1E1;
+    background: #fbfbfb;
+    /*background: url("formBG.png") repeat-x scroll left top #E9E9E9;*/
+    color: #7D7D7D;
+    font-size: 14px;
+    padding: 6px 12px;    
+}
+.office-edit .form .field input{
+    width:401px;
+}
+.office-edit .form .field textarea {
+    width:400px;
+    resize: vertical;
+    min-height:45px;
+}
+.office-edit .form .field input[type="submit"], .office-edit .form .field input[type="button"] {
+    cursor:pointer;
+    width:auto;
+}
+.office-edit .form .field input[type="submit"].green, .office-edit .form .field input[type="button"].green{
+    color:#4fb422;
+    font-weight: bold;
+}
+
+.office-edit .form .field input[type="submit"].blue, .office-edit .form .field input[type="button"].blue{
+    color:#FFF;
+    background: url(../blueButton.png) top left repeat-x #0093bd;
+    margin-left:194px;
+}
+.office-edit .form .field input[type="submit"].blue:active, .office-edit .form .field input[type="button"].blue:active{
+    background-position: bottom left;
+}
+.office-edit .form .field select {
+    width: 229px;
+    background: url("../formBG.png") repeat-x scroll left top #E9E9E9;
+    border: 1px solid #E1E1E1;
+    color: #7D7D7D;
+    font-size: 14px;
+    padding: 5px 12px;
+}
+.office-edit .form .field span label{
+    float:none;
+    display:inline;
+}
+.office-edit .form .field span {
+    display: block;
+    margin-left: 150px;
+}
+
+.office-edit .select {
+    padding:6px 0;
+    top:-2px;
+}
+.office-edit .select.multi {
+    padding:0;
+    background:#e9e9e9;
+}
+.office-edit .select.multi .options{
+    margin-top:0px;
+}
+.office-edit .select .options{
+    /*margin-top:13px;*/
+}
+
+.office-edit .select .selected {
+    padding-left:12px;
+}
+
+.office-edit .select.multi .selected {
+    padding:5px;
+    width:auto;
+    margin:0;
+}
+
+/*
+Profile edit tabs
+*/
+
+#facecom-tabs {
+    margin-top:20px;
+}
+
+#facecom-tabs ul{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+
+#facecom-tabs ul li {
+    float:left;
+    padding:5px 0;
+    border-bottom:1px solid #fdfdfd;
+}
+#facecom-tabs ul li a {
+    padding:5px 17px;
+    font-size: 16px;
+}
+.office-edit a.delete, .office-edit .buttons a{
+    color:#00abd1;
+    font-weight:normal;
+    text-decoration: underline;
+}
+.office-edit a.delete:hover, .office-edit .buttons a:hover{
+    text-decoration: none;
+}
+.office-edit .buttons a {
+    margin-left:200px;
+}
+.office-edit .field.date .day{
+    width:60px;
+}
+.office-edit .field.date .month{
+    width:180px;
+}
+.office-edit .field.date .year{
+    width:120px;
+}
+/*
+Obrazovanie subtabs
+*/
+#facecom-tabs #obrazovaniye ul li {
+    color:#00abd1;
+    margin-right: 10px;
+    border:none;
+}
+#obrazovaniye ul li .edulink {
+    border:none;
+    padding:0px;
+    color:#00abd1;
+    font-size:12px;
+    font-weight: bold;
+    border-bottom: 1px dashed #00abd1;
+    text-decoration: none;
+}
+#obrazovaniye ul li .edulink:hover {
+    border-bottom: none;
+}
+#obrazovaniye ul li .edulink.active {
+    font-weight: normal;
+    border:none;
+}
+
+/*#facecom-tabs ul li a {
+    background: #e1ffff;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2UxZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjclIiBzdG9wLWNvbG9yPSIjZTFmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTIlIiBzdG9wLWNvbG9yPSIjZTFmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTIlIiBzdG9wLWNvbG9yPSIjZmRmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMzAlIiBzdG9wLWNvbG9yPSIjZTZmOGZkIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNTQlIiBzdG9wLWNvbG9yPSIjYzhlZWZiIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNzUlIiBzdG9wLWNvbG9yPSIjYmVlNGY4IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2IxZDhmNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(top, #e1ffff 0%, #e1ffff 7%, #e1ffff 12%, #fdffff 12%, #e6f8fd 30%, #c8eefb 54%, #bee4f8 75%, #b1d8f5 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e1ffff), color-stop(7%,#e1ffff), color-stop(12%,#e1ffff), color-stop(12%,#fdffff), color-stop(30%,#e6f8fd), color-stop(54%,#c8eefb), color-stop(75%,#bee4f8), color-stop(100%,#b1d8f5));
+    background: -webkit-linear-gradient(top, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%);
+    background: -o-linear-gradient(top, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%);
+    background: -ms-linear-gradient(top, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%);
+    background: linear-gradient(to bottom, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#b1d8f5',GradientType=0 );    
+    text-decoration: none;
+    color: #0066A4;
+    border:1px solid #7D7D7D;
+    padding:4px 5px;
+    font:16px Tahoma, sans-serif;
+    border-bottom: none;
+}
+#facecom-tabs ul li a.active {
+    background: #e1ffff;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2UxZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjclIiBzdG9wLWNvbG9yPSIjZTJmZmU4IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTIlIiBzdG9wLWNvbG9yPSIjZTFmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTIlIiBzdG9wLWNvbG9yPSIjYjFkOGY1IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMjglIiBzdG9wLWNvbG9yPSIjYmVlNGY4IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNTQlIiBzdG9wLWNvbG9yPSIjYzhlZWZiIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNzclIiBzdG9wLWNvbG9yPSIjZTZmOGZkIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZkZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(top, #e1ffff 0%, #e2ffe8 7%, #e1ffff 12%, #b1d8f5 12%, #bee4f8 28%, #c8eefb 54%, #e6f8fd 77%, #fdffff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e1ffff), color-stop(7%,#e2ffe8), color-stop(12%,#e1ffff), color-stop(12%,#b1d8f5), color-stop(28%,#bee4f8), color-stop(54%,#c8eefb), color-stop(77%,#e6f8fd), color-stop(100%,#fdffff));
+    background: -webkit-linear-gradient(top, #e1ffff 0%,#e2ffe8 7%,#e1ffff 12%,#b1d8f5 12%,#bee4f8 28%,#c8eefb 54%,#e6f8fd 77%,#fdffff 100%);
+    background: -o-linear-gradient(top, #e1ffff 0%,#e2ffe8 7%,#e1ffff 12%,#b1d8f5 12%,#bee4f8 28%,#c8eefb 54%,#e6f8fd 77%,#fdffff 100%);
+    background: -ms-linear-gradient(top, #e1ffff 0%,#e2ffe8 7%,#e1ffff 12%,#b1d8f5 12%,#bee4f8 28%,#c8eefb 54%,#e6f8fd 77%,#fdffff 100%);
+    background: linear-gradient(to bottom, #e1ffff 0%,#e2ffe8 7%,#e1ffff 12%,#b1d8f5 12%,#bee4f8 28%,#c8eefb 54%,#e6f8fd 77%,#fdffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#fdffff',GradientType=0 );    
+    color: #E1E1E1;
+    text-shadow: 0px -1px #7D7D7D;
+}*/
+
+#coupons {
+    margin:15px;
+    min-height:20px;
+    border:1px solid #ccc;
+    border-radius: 10px;
+}
+
+#coupons .flag{
+    margin:10px 50% 10px 10px;
+    position:relative;
+}
+#coupons .flag .percent{
+    position:absolute;
+    top:15px;
+    right:30px;
+}
+
+#coupons .hidden-form {
+    display:none;
+}
