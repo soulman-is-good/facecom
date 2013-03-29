@@ -19,7 +19,7 @@ class TargetController extends Controller {
 	{
 		$ivs=Interviews::model()->findAll('owner=:owner',array(':owner'=>Yii::app()->user->id));
 		Yii::app()->clientScript->registerPackage('interview-my');
-		$this->render('/advert/interview_my', array('ivs'=>$ivs));
+		$this->render('/advert/target_my', array('ivs'=>$ivs));
 	}
 
 	public function actionCreate()
