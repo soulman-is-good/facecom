@@ -89,7 +89,7 @@ class AphotosController extends CController
 
 	public function actionUpload()
 	{
-		$ret = Files::model()->uploadFile(array('resize' => true));
+		$ret = Files::model()->uploadFile(array('resize' => FALSE));
 		echo json_encode( array( array(
 		    "id" => $ret['filename'],
 		    "name" => $ret['filename'].'.'.$ret['extension'],

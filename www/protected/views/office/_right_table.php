@@ -1,3 +1,4 @@
+<?if(0):?>
 <a href="#" class="fullList">Весь список</a>
 Партнеры (45)
 <table border="0" cellspacing="0" cellpadding="0" width="100%" class="list">
@@ -57,3 +58,4 @@
         <span class="text">Aenean molestie interdum ante, at fermentum tortor sollicitudin eleifend. Proin nibh orci, aliquam et fringilla et,</span>
     </div>
 </a>
+<?endif;?>

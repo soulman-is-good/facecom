@@ -21,6 +21,7 @@ class PostsController extends Controller {
 
             // Создание JSON массива для прикрепления файлов к посту.
             $multimedia = array(); // Доработать в дальнейшем - либо получаем готовый массив, либо парсим тут в php
+            $files = array();
             if(isset($_POST['files'])){
                 foreach($_POST['files'] as $ind => $files){
                     $multimedia[$ind]['nomber'] = $ind + 1;
@@ -62,7 +63,7 @@ class PostsController extends Controller {
                     $res = '';
 
                     foreach ($posts as $key => $item) {
-                        $res .= $this->renderPartial('//posts/_postItem', array('item' => $item, 'files' => $files, 'owner' => $id, 'display' => 'none'), true);
+                        $res .= $this->renderPartial('//posts/_postItem', array('item' => $item, 'files' => $files, 'owner' => 0, 'display' => 'none'), true);
                     }
 
                     echo json_encode(array('status' => 'ok', 'data' => $res));

@@ -35,12 +35,13 @@ foreach ($cats as $cat):
 <?= $office->user->profile->halfName ?>
 </p>
 <?foreach($contacts as $contact):
-    $contact = explode(':',$contact)?>
+    $contact = explode(':',$contact);
+if(isset(Office::$contacts[$contact[0]])):?>
 <p>
     <b><?=Office::$contacts[$contact[0]]?>:</b><br />
     <?=$contact[1]?><br />
 </p>
-<?endforeach;?>
+<?endif;endforeach;?>
 <p>
     <b>Адрес:</b><br />
     <?=$office->region?>, <?=$office->address?>

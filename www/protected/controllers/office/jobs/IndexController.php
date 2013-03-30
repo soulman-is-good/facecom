@@ -25,10 +25,8 @@ class IndexController extends Controller {
 	
     public function actionIndex($oid)
 	{
-		$jobs = Jobs::Model()->findAll('office_id = :office_id', array(':office_id' => $oid));
-		echo $jobs['description'];
-		if(strlen($jobs['description']) > 600)
-			$jobs['description'] = mb_substr($jobs['description'], 0, 600, 'utf-8').'...';
+		$jobs = Jobs::model()->findAll('office_id = :office_id', array(':office_id' => $oid));
+                $jobs = array_map(create_function('&$item', 'if(isset($item->description) && strlen($item->description) > 600) $item->description = mb_substr($item->description, 0, 600, "utf-8")."..."; return $item;'),$jobs);
 
 		Yii::app()->clientScript->registerScript('global_office_id', 'var glOfficeId = '.$oid.';', CClientScript::POS_HEAD);
 		$this->render('/office/jobs/index', array('jobs' => $jobs, 'my_office' => $this->checkMyOffice($oid)));

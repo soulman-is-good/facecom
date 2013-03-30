@@ -3,7 +3,9 @@
 class ImagesController extends Controller {
 
     public function run($thumb) {
-        $key = strtok(key($_GET),'.');
+        $x = $_GET;
+        end($x);
+        $key = strtok(key($x),'.');
         if (NULL == ($file = Files::model()->findByPk($key))){
             throw new CException('Page not found', 404);
         }
@@ -28,6 +30,12 @@ class ImagesController extends Controller {
             if (file_exists($dir)) {
                 $image = false;
                 if (($image = $file->resize($thumb)) == 0){
+                    if(is_file($out_file)){
+                        $mime = CFileHelper::getMimeType($in_file);
+                        header('Content-Type: ' . $mime);
+                        readfile($out_file);
+                        exit;
+                    }
                     throw new CException('Page not found', 404);
                 }
                 $mime = CFileHelper::getMimeType($in_file);

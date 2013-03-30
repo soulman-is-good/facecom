@@ -19,7 +19,7 @@ class Files extends CActiveRecord {
         '80x80' => array(80, 80),
         'avatar' => array(190, 192),
         'mini' => array(48, 48),
-        'miсro' => array(32, 32),
+        'micro' => array(32, 32),
         'cover' => array(1024, 0),
         'edit_avatar' => array(656, 520),//for avatar edition
     );

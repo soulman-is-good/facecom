@@ -121,13 +121,13 @@ class MyController extends Controller {
         $this->layout = 'authorization';
         $model = new LoginForm;
 
-        // if it is ajax validation request
-        if (isset($_POST['ajax']) && $_POST['ajax'] === 'login-form') {
-            echo CActiveForm::validate($model);
-            Yii::app()->end();
-        }
         $user = new User();
         $profile = new UserProfile();
+        // if it is ajax validation request
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'register-form') {
+            echo CActiveForm::validate($user);
+            Yii::app()->end();
+        }
         if (isset($_POST['User'])) {
             $user->attributes = $_POST['User'];
             $user->salt = time();
@@ -135,13 +135,16 @@ class MyController extends Controller {
             $password = $user->password;
             if ($_POST['password_repeat'] != $user->password)
                 $user->addError('password', 'Пароли не совпадают');
-            if (!$user->hasErrors() && $user->save()) {//TODO: $user->validate()
-                if (isset($_POST['UserProfile']))
-                    $profile->attributes = $_POST['UserProfile'];
-                $profile->third_name = '-';
+            if (isset($_POST['UserProfile'])){
+                $profile->attributes = $_POST['UserProfile'];
+                $profile->birth_date = mktime(0, 0, 0, (int) $_POST['UserProfile']['birth_date'][1], (int) $_POST['UserProfile']['birth_date'][0], (int) $_POST['UserProfile']['birth_date'][2]);
+            }
+            $profile->scenario = 'register';
+            if (!$user->hasErrors() && $profile->validate() && $user->save()) {//TODO: $user->validate()
+                $profile->tryGravatar = true;
+                $profile->third_name = '';
                 $profile->city_id = '1';
                 $profile->family = '0';
-                $profile->birth_date = mktime(0, 0, 0, (int) $_POST['UserProfile']['birth_date'][1], (int) $_POST['UserProfile']['birth_date'][0], (int) $_POST['UserProfile']['birth_date'][2]);
                 $profile->user_id = $user->id;
                 $profile->save();
             }

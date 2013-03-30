@@ -7,7 +7,6 @@
     
     <div style="clear: both"></div>
     <?php
-    $form = new CActiveForm();
     $form = $this->beginWidget('CActiveForm', array(
         'id' => 'userprofile-form',
         'enableClientValidation' => true,

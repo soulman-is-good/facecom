@@ -357,7 +357,7 @@ $(document).ready(function(){
         var content = $('<div />').addClass('facecom-gallery');
         var selection = [];
         var ops = {
-            'url':'/id11/aphotos/get_json',
+            'url':'/id0/aphotos/get_json',
             'multiselect':false,
             'rememberSelection':true,
             'path':'/images/',
@@ -420,7 +420,7 @@ $(document).ready(function(){
                     'margin':'10px 0'
                 });
                 if(typeof aid == 'undefined'){
-                    if(typeof it.data[0].album_name != 'undefined')
+                    if(typeof it.data[0] != 'undefined' && typeof it.data[0].album_name != 'undefined')
                         brd.append('<span>Все альбомы</span>');
                     else
                         brd.append('<span>Все фото</span>');
@@ -522,11 +522,12 @@ $(document).ready(function(){
                     }
                 }
             }
-
-            if(typeof data[0].album_name == 'undefined')
-                this.drawPhotos();
-            else
-                this.drawAlbums();
+            if(typeof data[0] != 'undefined'){
+                if(typeof data[0].album_name == 'undefined')
+                    this.drawPhotos();
+                else
+                    this.drawAlbums();
+            }
         }
         content.append('<div class="fcg-loader">&nbsp;</div>')
         self.loading();

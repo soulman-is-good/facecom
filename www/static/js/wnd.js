@@ -247,7 +247,8 @@ function wnd(content,modal,width,height,closeOnTap){
         var zindex = 1*parseInt($('.blackscreen:last').css('z-index')) + 10;
         $($.rusWindows[id].blackscreen).css('z-index',zindex);
         $($.rusWindows[id].content).parent().css('z-index',zindex+1)
-        $.rusWindows[id].getContent().draggable();
+        if($.rusWindows[id].getContent().is('.draggable'))
+            $.rusWindows[id].getContent().draggable();
         return $.rusWindows[id];
     }
     $.dialog = function(content,title,callback,buttonName){

@@ -37,8 +37,8 @@ class TargetController extends Controller {
 		$iv->name = Yii::app()->getRequest()->getPost('name');
 		$iv->title = Yii::app()->getRequest()->getPost('title');
 		$iv->status=1;
-		$qs=Yii::app()->getRequest()->getPost('q');
-		$answs=Yii::app()->getRequest()->getPost('a');
+		$qs=Yii::app()->getRequest()->getPost('q',array());
+		$answs=Yii::app()->getRequest()->getPost('a',array());
 		$quests=array();
 		foreach($qs as $k=>$v){
 			$cq=array();
@@ -108,7 +108,7 @@ class TargetController extends Controller {
 			$addon->date_added=time();
 			$addon->save();
 		}
-        if($success){$this->redirect('//advert/interview/my');}
+        if($success){$this->redirect('/advert/interview/my');}
         else{
         	$errs=$iv->getErrors();
         	foreach($errs as $v){

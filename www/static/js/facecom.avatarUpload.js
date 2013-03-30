@@ -114,7 +114,7 @@ $(function(){
                     rx = 32 / coords.w;rw = Math.round(rx * img.width());
                     ry = 32 / coords.h;rh = Math.round(ry * img.height());
                     $('#preview3').css({width: rw + 'px',height: rh + 'px',marginLeft: '-' + Math.round(rx * coords.x) + 'px',marginTop: '-' + Math.round(ry * coords.y) + 'px'});                    
-                    if(width>0 && height>0 && width<600 && height<600)
+                    if(width>0 && height>0 && width<190 && height<190)
                         $('#fc-avatar-install').attr('disabled',false);
                     else
                         $('#fc-avatar-install').attr('disabled',true);
@@ -425,8 +425,9 @@ function userBackgroundHandle(image,href){
             dragging = false;
         };
         $(document).bind('mousedown',mousedown).bind('mousemove',mousemove).bind('mouseup',mouseup);
-        var ok_button = $('<input />').attr({'type':'button','value':'Готово'}).css({'float':'right'}).click(function(){
-            $.post(href,{
+        var xhr = null;
+        var ok_button = $('<button />').attr({'type':'button','class':'blue'}).html('Готово').css({'float':'right'}).fcbutton().click(function(){
+            xhr = $.post(href,{
                 left:left,
                 top:top,
                 width:img.width(),
@@ -434,7 +435,10 @@ function userBackgroundHandle(image,href){
                 image:ifile
             },function(m){
                 if(m.status == 'OK'){
-                    $('.userBG > img').attr('src','/images/cover/'+m.message+'?'+Math.random()*100);
+                    $('.userCover').css({
+                        'background-image':'url(/images/cover/'+m.message+'?'+Math.random()*100+')',
+                        'background-position':'-'+left+'px -'+top+'px'
+                    });
                     rwnd.close();
                     $('.userBG .avatar').fadeIn();
                     $(document).unbind('mousedown',mousedown).unbind('mousemove',mousemove).unbind('mouseup',mouseup);
@@ -443,9 +447,11 @@ function userBackgroundHandle(image,href){
         });
         //CLOSE EDIT WINDOW
         var cancel_button = $('<input />').attr({'type':'button','value':'Отмена'}).css({'float':'right','margin':'0 10px'}).click(function(){
-            $('.avatarAndMenu .avatar').fadeIn();
+            $('.userBG .avatar').fadeIn();
             $(document).unbind('mousedown',mousedown).unbind('mousemove',mousemove).unbind('mouseup',mouseup);
-            rwnd.close()
+            if(xhr!=null)
+                xhr.abort();
+            rwnd.close();
         });
         var scaler = $('<div />').attr({'title':'Масштаб'}).css({
             'position':'absolute',

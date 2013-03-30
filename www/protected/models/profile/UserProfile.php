@@ -27,6 +27,12 @@
 class UserProfile extends Record {
 
     /**
+     * @var boolean try to load gravatar on save
+     */
+    public $tryGravatar = false;
+
+
+    /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
      * @return UserProfile the static model class
@@ -60,7 +66,9 @@ class UserProfile extends Record {
      */
     public function rules() {
         return array(
-            array('user_id, city_id, first_name, second_name, third_name, family', 'required'),
+            array('first_name, second_name', 'required','on'=>'register'),
+            array('user_id, city_id, first_name, second_name, third_name', 'required','on'=>'insert'),
+            array('user_id, city_id, first_name, second_name, third_name, family', 'required','on'=>'update'),
             array('family, gender, birth_date', 'numerical', 'integerOnly' => true),
             array('user_id, city_id, birth_date', 'length', 'max' => 10),
             array('address, first_name, second_name, third_name, phone, email', 'length', 'max' => 255, 'encoding' => 'UTF-8'),
@@ -289,6 +297,18 @@ class UserProfile extends Record {
     public function beforeValidate() {
         if(is_array($this->languages))
             $this->languages = implode (',', $this->languages);
+        if($this->tryGravatar && 0){
+            $email = $this->user->email;
+            $url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?s=190&d=404";
+            $url = parse_url($url);
+            $errno = '';$errstr='';
+            if(FALSE !== ($f = @fsockopen($url['hostname'],'80',$errno,$errstr,30))){
+                $out = "GET {$url['path']}?{$url['query']} HTTP/1.1\r\n";
+                $out.= "Host: {$url['hostname']}\r\n";
+                $out.= "Connection: close\r\n\r\n";
+                @fwrite($f, $out);
+            }
+        }
         parent::beforeValidate();
         return true;
     }

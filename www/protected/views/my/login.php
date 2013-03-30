@@ -2,6 +2,17 @@
 /* @var $this SiteController */
 /* @var $model LoginForm */
 /* @var $form CActiveForm  */
+    $months = array_merge(array(0=>'Месяц:'),Yii::app()->getLocale()->getMonthNames());
+    $days = range(0,31);
+    $days = array_combine($days, $days);
+    $days[0] = 'День:';
+    //generate years array
+    $till = (int)date('Y')-14; //allowed age?
+    $from = $till-80;
+    $years = array_reverse(range($from, $till));
+    $years = array_merge(array(0=>'Год:'),array_combine($years, $years));
+    $uerr = $user->getErrors();
+    $perr = $profile->getErrors();
 ?>
 
             <?= $this->renderPartial('//layouts/pieces/header_login',array('model'=>$model)) ?>
@@ -20,22 +31,30 @@
                             ),
                     )); ?>
                     <div class="field">
-                        <?=$form->textField($profile,'first_name',array('placeholder'=>'Имя','class'=>'half'))?> <?=$form->textField($profile,'second_name',array('placeholder'=>'Фамилия','class'=>'half','style'=>'margin-left:13px'))?>
+                        <div style="position: relative;display: inline-block" class="<?=isset($perr['first_name'])?' error':''?>">
+                            <?=$form->textField($profile,'first_name',array('placeholder'=>'Имя','class'=>'half'))?> 
+                            <div class="error-msg"><?=$form->error($profile,'first_name')?></div>
+                        </div>
+                        <div style="position: relative;display: inline-block;" class="<?=isset($perr['second_name'])?' error':''?>">
+                            <?=$form->textField($profile,'second_name',array('placeholder'=>'Фамилия','class'=>'half','style'=>'margin-left:13px'))?>
+                            <div class="error-msg" style="left:13px;"><?=$form->error($profile,'second_name')?></div>
+                        </div>
                     </div>
-                    <div class="field">
+                    <div class="field<?=isset($perr['first_name'])?' error':''?>">
                         <?=$form->textField($user,'email',array('placeholder'=>'Электронная почта'))?>
+                        <div class="error-msg"><?=$form->error($profile,'email')?></div>
                     </div>
                     <div class="field">
-                        <?=$form->textField($user,'password',array('placeholder'=>'Пароль'))?>
+                        <?=$form->passwordField($user,'password',array('placeholder'=>'Пароль'))?>
                     </div>
                     <div class="field">
-                        <?=CHtml::textField('password_repeat', isset($_POST['password_repeat'])?$_POST['password_repeat']:'', array('placeholder'=>'Повторите пароль'))?>
+                        <?=CHtml::passwordField('password_repeat', isset($_POST['password_repeat'])?$_POST['password_repeat']:'', array('placeholder'=>'Повторите пароль'))?>
                     </div>
                     <div class="h2" style="margin-bottom:20px;">День рождения</div>
                     <div class="field">
-                        <?=$form->dropDownList($profile, 'birth_date[]', array('День:','1'=>'1','2'=>'2','3'=>'3','4'=>'4'),array('fcselect'=>"width:'78px'"))?>
-                        <?=$form->dropDownList($profile, 'birth_date[]', array('Месяц:','1'=>'Январь','2'=>'Февраль','3'=>'Март','4'=>'Апрель'),array('fcselect'=>"width:'90px'"))?>
-                        <?=$form->dropDownList($profile, 'birth_date[]', array('Год:','1997'=>'1997','1996'=>'1996','1995'=>'1995'),array('fcselect'=>"width:'78px'"))?>
+                        <?=$form->dropDownList($profile, 'birth_date[]', $days,array('fcselect'=>"width:'78px'"))?>
+                        <?=$form->dropDownList($profile, 'birth_date[]', $months,array('fcselect'=>"width:'90px'"))?>
+                        <?=$form->dropDownList($profile, 'birth_date[]', $years,array('fcselect'=>"width:'78px'"))?>
                         <a class="why" href="/whatthe!">Для чего необходимо указывать дату рождения?</a>
                     </div>
                     <div class="field">
