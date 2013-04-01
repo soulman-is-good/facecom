@@ -1153,7 +1153,7 @@ a.bitbtn:active {
 .userBG .userCover{
     height:250px;
     overflow:hidden;
-    
+
 }
 .userBG .change_avatar{
     left:0px;right:0px;bottom:0px;
@@ -1974,10 +1974,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     height:19px;
 }
 
-input[type="radio"], input[type="checkbox"] {
+input[type="radio"].hid, input[type="checkbox"].hid {
     display:none;
 }
-input[type="radio"] + label span, input[type="checkbox"] + label span {
+input[type="radio"].hid + label span, input[type="checkbox"].hid + label span {
     display:inline-block;
     width:10px;
     height:10px;
@@ -1986,7 +1986,7 @@ input[type="radio"] + label span, input[type="checkbox"] + label span {
     border:1px solid #e1e1e1;
     cursor:pointer;
 }
-input[type="radio"]:checked + label span span, input[type="checkbox"]:checked + label span span{
+input[type="radio"].hid:checked + label span span, input[type="checkbox"].hid:checked + label span span{
 	display:inline-block;
     width:6px;
     height:6px;
@@ -2003,7 +2003,7 @@ Facecom Icons
 *******************************/
 .icon {
     display:inline-block;
-    width:18px;height:18px;        
+    width:18px;height:18px;
 }
 .buttonicon{
     padding:0 6px;

@@ -67,9 +67,9 @@ $q=($query=='')?'Введите имя или слово для поиска':$q
  			<label for="age_from">Возраст</label>
  			<input name="age_from" type="text" size="5" maxlength="3" style="width:70px;" placeholder="От" /> - <input name="age_to" type="text" placeholder="До" size="5" maxlength="3" style="width:70px;" /><br />
  			<label for="gender">Пол</label>
- 			<input name="gender" type="radio" value="1" id="g1" /><label for="g1" class="graytext"><span><span></span></span>Мужской</label><br />
- 			<input name="gender" type="radio" value="2" id="g2" /><label for="g2" class="graytext"><span><span></span></span>Женский</label><br />
- 			<input name="gender" type="radio" value="0" id="g0" checked="checked" /><label for="g0" class="graytext"><span><span></span></span>Любой</label>
+ 			<input name="gender" type="radio" value="1" id="g1" class="hid" /><label for="g1" class="graytext"><span><span></span></span>Мужской</label><br />
+ 			<input name="gender" type="radio" value="2" id="g2" class="hid" /><label for="g2" class="graytext"><span><span></span></span>Женский</label><br />
+ 			<input name="gender" type="radio" value="0" id="g0" class="hid" checked="checked" /><label for="g0" class="graytext"><span><span></span></span>Любой</label>
  			<label for="family_state">Семейное положение</label>
  			<?php echo CHtml::dropDownList('family_state',99,$states,array('fcselect'=>false)); ?>
  			<label for="family_state">Места <a href='#' id="control3">▼</a></label>
@@ -84,8 +84,8 @@ $q=($query=='')?'Введите имя или слово для поиска':$q
  			</div>
  			<label for="withPhoto">Дополнительно <a href='#' id="control1">▼</a></label>
  			<div id='popup1'>
- 				<input name="withPhoto" type="checkbox" value="1" id="wp"><label for="wp" class="graytext"><span><span></span></span>с фотографией</label><br />
- 				<input name="onlyNames" type="checkbox" value="1" checked="checked" id="onln"><label for="onln" class="graytext"><span><span></span></span>только в именах</label><br />
+ 				<input name="withPhoto" class="hid" type="checkbox" value="1" id="wp"><label for="wp" class="graytext"><span><span></span></span>с фотографией</label><br />
+ 				<input name="onlyNames" class="hid" type="checkbox" value="1" checked="checked" id="onln"><label for="onln" class="graytext"><span><span></span></span>только в именах</label><br />
  				<?
  				echo CHtml::dropDownList("birthyear",9999,$years3,array('fcselect'=>true));
  				$months=array('Выберите месяц рождения','январь','февраль','март','апрель','май','июнь','июль','август','сентябрь','октябрь','ноябрь','декабрь');
