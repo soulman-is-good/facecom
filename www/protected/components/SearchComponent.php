@@ -1,5 +1,6 @@
 <?php
-class SearchComponent extends CComponent {
+class SearchComponent extends CComponent {
+
 	//ищет людей
 	//$criteria - массив со значениями полей поиска
 	//$words - массив, в который будут помещены слова запроса после разбивки
@@ -122,7 +123,7 @@ class SearchComponent extends CComponent {
         	//if noone field is specified
         	return false;
         }else{
-        	$sql="SELECT * FROM `user_profile` INNER JOIN `user` ON (`user`.`id`=`user_profile`.`user_id`) WHERE (`status`=1) AND ($fsp) AND ($qp) AND ($cp) AND ($afp) AND ($atp) AND ($wpp) AND ($gp) AND ($schp) AND ($up) AND ($wp) AND ($bp)";
+        	$sql="SELECT * FROM `user_profile` INNER JOIN `user` ON (`user`.`id`=`user_profile`.`user_id`) WHERE /*(`status`=1) AND*/ ($fsp) AND ($qp) AND ($cp) AND ($afp) AND ($atp) AND ($wpp) AND ($gp) AND ($schp) AND ($up) AND ($wp) AND ($bp)";
         	//$data.=$sql;
         	//sending request
 			$connection=Yii::app()->db;
