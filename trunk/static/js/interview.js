@@ -25,7 +25,7 @@ var qs={	1:{'q':'Пользуетесь ли вы косметикой?',
 var cur=1;
 function updateiv(){	var inps='';
 	for (var key in qs[cur].a) {
-    	inps+='<input name="a" class="iva" type="radio" value="'+key+'" id="iva'+key+'" /><label for="iva'+key+'" class="graytext"><span><span></span></span>'+qs[cur].a[key]+'</label><br />';
+    	inps+='<input name="a" class="hid" type="radio" value="'+key+'" id="iva'+key+'" /><label for="iva'+key+'" class="graytext"><span><span></span></span>'+qs[cur].a[key]+'</label><br />';
     }	$('#ivc').html(qs[cur].q+'<br />'+inps);
 	cur++;
 	if(cur>4)cur=1;
@@ -34,6 +34,6 @@ function updateiv(){	var inps='';
 
 $(function(){	//alert(qs[1]);
 	updateiv();
-	$('.iva').live('click',updateiv);
+	$('.hid').live('click',updateiv);
 	//alert(qs[1].q);
 	//alert('iaiaia');});
